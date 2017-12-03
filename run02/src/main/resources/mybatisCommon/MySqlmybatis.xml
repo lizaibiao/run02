@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<!-- mybatis 核心配置 -->
+<configuration>
+
+<!-- mybatis 运行时设置-->	
+	<settings>
+		<!-- mybatis 字段驼峰映射-->	
+  		<setting name="mapUnderscoreToCamelCase" value="true"/>
+ 	</settings>
+<!-- 起全局别名--> 
+	<typeAliases>  
+      <typeAlias type="com.run.entity.UserEn" alias="UserEn" />
+	</typeAliases>
+ 	
+ 	<!-- mybatis 其他设置-->	
+ 	<plugins>
+ 	 	<!-- mybatis 拦截器-->	
+		<plugin interceptor="com.run.common.dao.OffsetLimitInterceptor">
+		<!-- <property name="dialectClass" value="com.run.common.dao.OracleDialect"/> -->
+			<property name="dialectClass" value="com.run.common.dao.MySQLDialect"/>
+		</plugin>
+</plugins>
+
+</configuration>

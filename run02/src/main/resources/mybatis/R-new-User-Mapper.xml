@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.runnew.other.dao.UserEnDao">
+	
+	<resultMap id="userMap" type="com.run.entity.UserEn">
+		<result column="ID" property="id" />
+		<result column="CODE" property="code" />
+		<result column="NAME" property="name" />
+		<result column="MOBILE" property="mobile" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="LAST_LOGIN_TIME" property="lastLoginTime" />
+		<result column="STATUS" property="status" />
+	</resultMap>	
+	
+	<sql id="columns">ID,CODE,NAME,MOBILE,CREATE_TIME,LAST_LOGIN_TIME,STATUS </sql>
+
+    	<!-- 获取一个用户 -->
+    <select id="getById" parameterType="int"  resultType="UserEn">
+			SELECT  r.*,r.CREATE_TIME as createTime,r.LAST_LOGIN_TIME as lastLoginTime   FROM R_USER r 
+		<where>
+					<if test="id !=null ">
+								    r.id=#{id}
+				</if>
+		</where>
+	</select>
+   
+</mapper>
