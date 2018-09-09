@@ -74,16 +74,16 @@
 	</bean>
 	
 	<!-- 配置sqlSession -->
-	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
+	<!-- <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
     	<constructor-arg ref="sqlSessionFactory"/>
-	</bean>
+	</bean> -->
 	
 	<!-- mybatis 面向接口配置 -->
-<!--  	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
+ 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
         <property name="sqlSessionFactory"  ref="sqlSessionFactory"/>  
         <property name="basePackage" value="com.runnew.other.dao"></property>  
     </bean>  
- -->
+
 
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

@@ -1,4 +1,4 @@
-package com.run.util.test;
+package com.runnew.util.test;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

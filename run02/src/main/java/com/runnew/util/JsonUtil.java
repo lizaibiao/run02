@@ -1,4 +1,4 @@
-package com.run.util;
+package com.runnew.util;
 
 
 import java.util.List;
@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.run.entity.UserEn;
+import com.runnew.entity.UserEn;
 
 /**
  * json转换的工具类

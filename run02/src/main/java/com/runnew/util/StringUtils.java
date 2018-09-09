@@ -1,4 +1,4 @@
-package com.run.util;
+package com.runnew.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;

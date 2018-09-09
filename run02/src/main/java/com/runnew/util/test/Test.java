@@ -11,7 +11,7 @@
  * @version: V1.0   
  */
 
-package com.run.util.test;
+package com.runnew.util.test;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,13 +22,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.fastjson.JSONObject;
-import com.run.enmu.EnStatus;
-import com.run.entity.UserEn;
-import com.run.service.UserService;
-import com.run.util.JsonUtil;
-import com.run.util.UUIDUtil;
 import com.runnew.common.mybatis.BaseProvider;
+import com.runnew.enmu.EnStatus;
+import com.runnew.entity.UserEn;
 import com.runnew.other.dao.UserEnDao;
+import com.runnew.util.JsonUtil;
+import com.runnew.util.UUIDUtil;
 
 /** 
  * @ClassName: Test 
@@ -39,8 +38,6 @@ import com.runnew.other.dao.UserEnDao;
 @SuppressWarnings("unused")
 public class Test extends AbstractTest  {
 	@Autowired
-	private UserService userService;
-	@Autowired
 	private UserEnDao userEnDao;
 	
 	/*
@@ -48,8 +45,15 @@ public class Test extends AbstractTest  {
 	 */
    @org.junit.Test
     public void testExecute() {
-	UserEn user=   userEnDao.getById(1);
-	System.out.println(user.getName());
+	   UserEn en =new UserEn();
+	   en.setId("2");
+	   en.setName("2");
+	   try {
+			UserEn user=   userEnDao.getBaseDaoById("1");
+			System.out.println("哈哈"+user.getMobile());
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
     }
 	/** 
 	 * @Title: main 
@@ -58,8 +62,12 @@ public class Test extends AbstractTest  {
 	 * @return: void
 	 */
 	public static void main(String[] args) {
-		 Class<?> modelClass = BaseProvider.threadModelClass.get();
-		 System.out.println(modelClass);
+	try {
+		System.out.println(Class.forName("com.runnew.other.entity.UserEn"));
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}	
 	}
 }
 

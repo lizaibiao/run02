@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.runnew.other.dao.UserEnDao">
 	
-	<resultMap id="userMap" type="com.run.entity.UserEn">
+	<resultMap id="getBaseDaoByIdMap" type="com.runnew.entity.UserEn">
 		<result column="ID" property="id" />
 		<result column="CODE" property="code" />
 		<result column="NAME" property="name" />
@@ -15,13 +15,9 @@
 	<sql id="columns">ID,CODE,NAME,MOBILE,CREATE_TIME,LAST_LOGIN_TIME,STATUS </sql>
 
     	<!-- 获取一个用户 -->
-    <select id="getById" parameterType="int"  resultType="UserEn">
+    <select id="getById" parameterType="com.runnew.entity.UserEn"  resultType="UserEn">
 			SELECT  r.*,r.CREATE_TIME as createTime,r.LAST_LOGIN_TIME as lastLoginTime   FROM R_USER r 
-		<where>
-					<if test="id !=null ">
-								    r.id=#{id}
-				</if>
-		</where>
+					where  1=1 and    r.id=#{id} and r.name =#{name}
 	</select>
    
 </mapper>

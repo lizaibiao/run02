@@ -1,14 +1,17 @@
 package com.runnew.other.dao;
 
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 
-import com.run.entity.UserEn;
+import com.runnew.common.dao.BaseDao;
+import com.runnew.entity.UserEn;
 
 
-public interface UserEnDao {
+public interface UserEnDao  extends  BaseDao<UserEn> {
 	
-  //  @Select("SELECT  r.*,r.CREATE_TIME as createTime,r.LAST_LOGIN_TIME as lastLoginTime   FROM R_USER r where r.id=#{id}")  
-	public   UserEn getById(@Param(value = "id") int id);
+   //@Select("SELECT  r.*,r.CREATE_TIME as createTime,r.LAST_LOGIN_TIME as lastLoginTime   FROM R_USER r where r.id=#{userId}")  
+//	public   UserEn getById(@Param(value = "userId") String userId);
+	
+	
+	public   UserEn getById(UserEn en );
+
 
 }

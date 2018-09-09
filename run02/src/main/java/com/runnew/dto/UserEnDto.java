@@ -1,10 +1,10 @@
-package com.run.dto;
+package com.runnew.dto;
 
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.run.entity.UserEn;
+import com.runnew.entity.UserEn;
 
 
 /**

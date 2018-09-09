@@ -1,4 +1,4 @@
-package com.run.util.test;
+package com.runnew.util.test;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

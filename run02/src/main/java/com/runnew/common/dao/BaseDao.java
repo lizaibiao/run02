@@ -16,15 +16,18 @@ import com.runnew.common.mybatis.Sort;
 import com.runnew.common.mybatis.complexQuery.CustomQueryParam;
 
 
-public interface BaseDao<T extends BaseEntity> {
+//public interface BaseDao<T extends BaseEntity> {
+	
+	public interface BaseDao<T> {
+
 	
 //	@SelectProvider(type = BaseProvider.class, method = "getAll")
 //	@ResultMap("getMap")
 //	public List<T> getAll();
 
-	@SelectProvider(type = BaseProvider.class, method = "getById")
-	//@ResultMap("getMap")
-	public T getById(String id);
+	@SelectProvider(type = BaseProvider.class, method = "getBaseDaoById")
+    @ResultMap("getBaseDaoByIdMap")
+	public T getBaseDaoById(String id);
 //
 //	@SelectProvider(type = BaseProvider.class, method = "count")
 //	public int count(T findParams);

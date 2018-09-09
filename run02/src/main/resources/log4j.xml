@@ -103,7 +103,7 @@ Log4j建议只使用四个级别，优先级从高到低分别是 ERROR、WARN�
  -->
 
 	<root>
-		<level value="ERROR" />
+		<level value="DEBUG" />
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="dfileDebug" />
 		<appender-ref ref="dfileInfo" />

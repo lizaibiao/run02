@@ -1,11 +1,10 @@
-package com.run.entity;
+package com.runnew.entity;
 
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
-
-import com.run.enmu.EnStatus;
 
 /**
  * 
@@ -14,6 +13,7 @@ import com.run.enmu.EnStatus;
  * @author: lizaibiao
  * @date: 2016年7月2日 下午8:27:53
  */
+@Table(name = "r_user")
 public class UserEn implements Serializable{
 	/**
 	 * 
@@ -46,26 +46,7 @@ public class UserEn implements Serializable{
 	 * 最后登录时间
 	 */
 	private Date lastLoginTime;
-	/*
-	 * 状态
-	 */
-	private EnStatus emStatus;
 	
-
-	/**
-	 * @return the status
-	 */
-	public int getStatus() {
-        return emStatus == null ? 0 : emStatus.getValue();
-	}
-
-	/**
-	 * @param status the status to set
-	 */
-	@Deprecated
-	public void setStatus(int status) {
-		setEmStatus(EnStatus.valueOf(status));
-	}
 	
 	/**
 	 * @return the id
@@ -153,20 +134,4 @@ public class UserEn implements Serializable{
 	public void setLastLoginTime(Date lastLoginTime) {
 		this.lastLoginTime = lastLoginTime;
 	}
-
-	/**
-	 * @return the emStatus
-	 */
-	public EnStatus getEmStatus() {
-		return emStatus;
-	}
-
-	/**
-	 * @param emStatus the emStatus to set
-	 */
-	public void setEmStatus(EnStatus emStatus) {
-		this.emStatus = emStatus;
-	}
-
-
 }

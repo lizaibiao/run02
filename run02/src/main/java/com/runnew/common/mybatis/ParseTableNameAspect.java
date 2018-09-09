@@ -9,11 +9,17 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
+/**
+ * 切baseDao所有方法
+ * @author run
+ *
+ */
+
 @Aspect
 @Component
 public class ParseTableNameAspect {
 
-	@Around("execution(* com.ane56.ane56os.common.dao.BaseDao.*(..))")
+	@Around("execution(* com.runnew.common.dao.BaseDao.*(..))")
 	public Object invoke(ProceedingJoinPoint proceedingJoinPoint)
 			throws Throwable {
 		parseTableName(proceedingJoinPoint);
@@ -35,10 +41,10 @@ public class ParseTableNameAspect {
 		Class<?> cl = (Class<?>) mapperInterface.get(proxyTarget);
 		
 		// 获取model类
-		String modelName = cl.getName().replace(".dao.", ".entity.").replace("Dao", "");
+		String modelName = cl.getName().replace(".other.dao.", ".entity.").replace("Dao", "");
 
 		// 将modelClass添加到线程变量
-	//	BaseProvider.setModelClass(Class.forName(modelName));
+		BaseProvider.setModelClass(Class.forName(modelName));
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.run.enmu;
+package com.runnew.enmu;
 
 /**
  * @ClassName: EnStatus
